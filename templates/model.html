@@ -1,0 +1,62 @@
+
+<html lang="en">
+    <head>
+        <title>Car Rental system</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+        <style>
+            .box{
+                  background-color: rgb(0,0,0); /* Fallback color */
+                  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+                  color: white;
+                  font-weight: bold;
+                  border: 3px solid #f1f1f1;
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  z-index: 2;
+                  width: 70%;
+                  padding: 20px;
+                  text-align: center;
+            }
+        </style>
+        </head>
+    <body style="background-image: url('{{url_for('static', filename='road2.jpg')}}'); height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;">
+        <div style="text-align:center;color: white;padding-top:150px;">
+        <h1>RENT A CAR AT BEST RATES.</h1><br>
+            <form method="POST" action>
+                From_Date <input type="date" name="From_Date">
+                From_Time <input type="time" name="From_Time">
+                 To_Date<input type="date" name="To_Date">
+                To_Time<input type="time" name="To_Time"><br>
+                <br>
+                <input type="Submit" name="Submit" >
+                <br>
+                <center>
+                 <table  border="1">
+    {% for car in data  %}
+
+   <tr>
+        <td>{{ car[0] }}</td>
+        <td>{{ car[1] }}</td>
+        <td>{{ car[2] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+                    </center>
+            </form>
+
+
+        </div>
+    </body>
+</html>

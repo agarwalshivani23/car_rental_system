@@ -1,0 +1,95 @@
+
+<html lang="en">
+    <head>
+        <title>Car Rental system</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+        <style>
+            .box{
+                  background-color: rgb(0,0,0); /* Fallback color */
+                  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+                  color: white;
+                  font-weight: bold;
+                  border: 3px solid #f1f1f1;
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  z-index: 2;
+                  width: 70%;
+                  padding: 20px;
+                  text-align: center;
+            }
+           .modal-open .modal {
+                overflow-x: hidden;
+                overflow-y: hidden;
+            }
+            .button1 {
+              width:236px;
+              height:36px;
+            }
+            h5,.h5{
+            color:#352b2b;
+            }
+        </style>
+    </head>
+    <body style="background-image: url('{{url_for('static', filename='car1.png')}}'); height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;">
+        <div class="box">
+        <h1>FIND THE RIGHT CAR FOR YOU.</h1>
+         <h4>We have more than thousand of cars for you to choose.</h4>
+            <button type="button" class="button1" data-toggle="modal" data-target="#myModal">sign up</button>
+            <h6>Already have an account?</h6>
+            <button type="button" class="button1" data-toggle="modal" data-target="#mysubModal">login</button>
+        </div>
+   <div class="modal" id="myModal" data-backdrop="false">
+    <div class="modal-dialog" style="padding-right:55px;">
+      <div class="modal-content" style="background-color:#de1414;">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">sign up</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+          <div class="modal-body" style="height:202px;">
+            <form method="POST" action>
+                User_id <input type="text" name="userid">
+                <br><br>
+                name <input type="text" name="name"><br><br>
+                Password <input type="password" name="password"><br>
+                <input type="Submit" name="Submit">
+            </form>
+        </div>
+     </div>
+   </div>
+            </div>
+    <div class="modal" id="mysubModal" data-backdrop="false">
+    <div class="modal-dialog" style="padding-right:55px;">
+      <div class="modal-content" style="background-color:#de1414;">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Login</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+          <div class="modal-body" style="height:202px;">
+             <form method="POST" action>
+                User_id <input type="text" name="userid">
+                <br><br>
+                Password <input type="password" name="password"><br>
+                <input type="Submit" name="Submit">
+            </form>
+        </div>
+     </div>
+   </div>
+    </div>
+    </body>
+    </html>

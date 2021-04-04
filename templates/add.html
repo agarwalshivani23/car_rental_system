@@ -1,0 +1,72 @@
+
+<html lang="en">
+    <head>
+        <title>Car Rental system</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+        <style>
+            .box{
+                  background-color: rgb(0,0,0); /* Fallback color */
+                  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+                  color: white;
+                  font-weight: bold;
+                  border: 3px solid #f1f1f1;
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  z-index: 2;
+                  width: 70%;
+                  padding: 20px;
+                  text-align: center;
+            }
+        </style>
+        </head>
+    <body style="background-image: url('{{url_for('static', filename='road.jpg')}}'); height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;">
+        <div  class="box">
+            <h5>Add a car</h5>
+            <form method="POST" action>
+                car_license_number<input type="text" name="carLicenseNumber"><br>
+                <br>
+                 Manufacturer<input type="text" name="Manufacturer"><br>
+                <br>
+                 Model<input type="text" name="Model"><br>
+                <br>
+                 Base_price<input type="number" name="Base_Price"><br>
+                <br>
+                 PPH<input type="number" name="PPH"><br>
+                <br>
+                 Security-deposit<input type="number" name="Security-deposit"><br>
+                <br>
+                <input type="Submit" name="Submit" >
+                <br>
+                <center>
+                 <table  border="1">
+                     <br>
+    {% for book_car in data  %}
+
+   <tr>
+        <td>{{ book_car[1] }}</td>
+        <td>{{ book_car[2] }}</td>
+        <td>{{ book_car[4] }}</td>
+        <!-- <td>{{ book_car[3]}}</td> -->
+
+    </tr>
+    {% endfor %}
+</table>
+                    </center>
+            </form>
+
+
+        </div>
+    </body>
+</html>
